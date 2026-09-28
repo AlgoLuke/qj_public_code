@@ -1,0 +1,17 @@
+name: Public Repository Security
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+  schedule:
+    - cron: "17 5 * * 1"
+
+permissions:
+  contents: read
+
+jobs:
+  public-security:
+    uses: QuantJourneyOrg/.github/.github/workflows/public-python-security.yml@main
